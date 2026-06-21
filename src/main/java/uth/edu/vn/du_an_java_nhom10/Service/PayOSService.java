@@ -1,44 +1,44 @@
 package uth.edu.vn.du_an_java_nhom10.Service;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
-import uth.edu.vn.du_an_java_nhom10.Model.CartItem;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import vn.payos.PayOS;
+import vn.payos.model.v2.paymentRequests.CreatePaymentLinkRequest;
+import vn.payos.model.v2.paymentRequests.CreatePaymentLinkResponse;
 
 @Service
 public class PayOSService {
 
+    private final PayOS payOS;
     private final CartService cartService;
 
-    public PayOSService(CartService cartService) {
+    @Value("${app.url}")
+    private String appUrl;
+
+    public PayOSService(PayOS payOS, CartService cartService) {
+        this.payOS = payOS;
         this.cartService = cartService;
     }
 
     public String createPayment(Long userId) {
-        List<CartItem> cartItems = cartService.getCartItemsByUserId(userId);
+        try {
+            Long amount = 10000L; // đổi chỗ này thành tổng giỏ hàng sau
 
-        if (cartItems == null || cartItems.isEmpty()) {
-            throw new RuntimeException("Giỏ hàng đang trống");
+            CreatePaymentLinkRequest request = CreatePaymentLinkRequest.builder()
+                    .orderCode(System.currentTimeMillis())
+                    .amount(amount)
+                    .description("Thanh toan don hang")
+                    .cancelUrl(appUrl + "/payment/cancel")
+                    .returnUrl(appUrl + "/payment/success")
+                    .build();
+
+            CreatePaymentLinkResponse response = payOS.paymentRequests().create(request);
+
+            return response.getCheckoutUrl();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("PayOS error: " + e.getMessage());
         }
-
-        int totalAmount = 0;
-
-        for (CartItem item : cartItems) {
-            totalAmount += item.getPrice() * item.getQuantity();
-        }
-
-        System.out.println("TOTAL AMOUNT = " + totalAmount);
-
-        // Chỗ này dùng totalAmount để tạo link PayOS
-        // amount(totalAmount)
-
-        return "link-thanh-toan-payos";
     }
 }
