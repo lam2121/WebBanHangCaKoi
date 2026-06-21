@@ -1,19 +1,23 @@
 package uth.edu.vn.du_an_java_nhom10.Controller;
 
+import jakarta.servlet.http.HttpSession;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import uth.edu.vn.du_an_java_nhom10.Service.CartService;
 import vn.payos.PayOS;
 import vn.payos.model.v2.paymentRequests.CreatePaymentLinkRequest;
 
 @RestController
 @RequestMapping("/api/payments")
 public class PaymentController {
-
+    private final CartService cartService;
     private final PayOS payOS;
 
-    public PaymentController(PayOS payOS) {
+    public PaymentController(CartService cartService, PayOS payOS) {
+        this.cartService = cartService;
         this.payOS = payOS;
     }
 
@@ -34,5 +38,20 @@ public class PaymentController {
         var paymentLink = payOS.paymentRequests().create(request);
 
         return ResponseEntity.ok(paymentLink.getCheckoutUrl());
+    }
+    @GetMapping("/payment/success")
+    public String paymentSuccess(HttpSession session) {
+        Long userId = (Long) session.getAttribute("loggedInUserId");
+
+        if (userId != null) {
+            cartService.clearCartByUserId(userId);
+        }
+
+        return "redirect:/Cart?payment=success";
+    }
+
+    @GetMapping("/payment/cancel")
+    public String paymentCancel() {
+        return "redirect:/Cart?payment=cancel";
     }
 }
