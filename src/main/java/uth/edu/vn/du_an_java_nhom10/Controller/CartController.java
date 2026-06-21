@@ -16,7 +16,9 @@ import java.util.Optional;
 
 @Controller
 public class CartController {
+    @Autowired
     private PayOSService payOSService;
+    @Autowired
     private UserService userService   ;
     @Autowired
     private CartService cartService;
@@ -58,6 +60,7 @@ public class CartController {
         if (userId == null) {
             throw new RuntimeException("Please login first");
         }
+
         return payOSService.createPayment(userId);
     }
 
