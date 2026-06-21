@@ -128,12 +128,18 @@ document.querySelector('.header_account_icon').addEventListener('click', functio
     dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
 });
 document.getElementById("checkout").addEventListener("click", () => {
-    fetch("/checkout", {
-        method: "POST"
+    fetch('/checkout', {
+        method: 'POST'
     })
-        .then(response => response.text())
-        .then(url => {
-            window.location.href = url;
+        .then(async response => {
+            const text = await response.text();
+
+            if (!response.ok) {
+                alert("Lỗi thanh toán: " + text);
+                return;
+            }
+
+            window.location.href = text;
         })
         .catch(error => {
             console.error(error);

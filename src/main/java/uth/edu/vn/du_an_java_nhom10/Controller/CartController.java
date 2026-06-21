@@ -2,6 +2,7 @@ package uth.edu.vn.du_an_java_nhom10.Controller;
 
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -54,14 +55,20 @@ public class CartController {
     }
     @PostMapping("/checkout")
     @ResponseBody
-    public String checkout(HttpSession session) {
-        Long userId = (Long) session.getAttribute("loggedInUserId");
+    public ResponseEntity<String> checkout(HttpSession session) {
+        try {
+            Long userId = (Long) session.getAttribute("loggedInUserId");
 
-        if (userId == null) {
-            throw new RuntimeException("Please login first");
+            if (userId == null) {
+                return ResponseEntity.status(401).body("Please login first");
+            }
+
+            String checkoutUrl = payOSService.createPayment(userId);
+            return ResponseEntity.ok(checkoutUrl);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(500).body(e.getMessage());
         }
-
-        return payOSService.createPayment(userId);
     }
-
 }
