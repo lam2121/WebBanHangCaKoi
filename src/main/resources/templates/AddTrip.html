@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thêm chuyến đi mới</title>
+</head>
+<style>
+    body {
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .add-trip {
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        margin: auto;
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+    }
+
+    input, textarea {
+        font-family: Arial, sans-serif; /* Đảm bảo font chữ giống nhau */
+        width: 90%; /* Điều chỉnh độ rộng để có khoảng trống hai bên */
+        padding: 10px;
+        margin: 10px auto; /* Căn giữa theo chiều ngang */
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        display: block; /* Đảm bảo block để margin:auto hoạt động */
+    }
+
+    input:focus {
+        border-color: #28a745;
+        outline: none;
+    }
+
+    button {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    button:hover {
+        background-color: #218838;
+    }
+</style>
+
+<body>
+<section class="add-trip">
+    <h2>Thêm chuyến đi mới</h2>
+    <form id="addTripForm">
+        <input type="text" id="name" placeholder="Tên chuyến đi" required />
+        <textarea id="description" placeholder="Mô tả chuyến đi" required></textarea>
+        <input type="text" id="imageUrl" placeholder="URL hình ảnh" required />
+        <button type="submit">Thêm chuyến đi</button>
+    </form>
+</section>
+
+<script>
+    document.getElementById("addTripForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Ngừng gửi form mặc định
+
+        const newTrip = {
+            name: document.getElementById("name").value,
+            description: document.getElementById("description").value,
+            imageUrl: document.getElementById("imageUrl").value,
+        };
+
+        // Kiểm tra dữ liệu
+        if (!newTrip.name || !newTrip.description || !newTrip.imageUrl) {
+            alert("Vui lòng điền đầy đủ thông tin chuyến đi!");
+            return;
+        }
+
+        // Gửi yêu cầu POST đến API
+        fetch('/trips', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newTrip)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Lỗi từ server');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Chuyến đi đã được thêm:', data);
+                alert('Chuyến đi đã được thêm thành công!');
+                document.getElementById("addTripForm").reset(); // Làm sạch form
+            })
+            .catch(error => {
+                console.error('Có lỗi xảy ra:', error);
+                alert('Đã xảy ra lỗi khi thêm chuyến đi!');
+            });
+    });
+</script>
+</body>
+
+</html>

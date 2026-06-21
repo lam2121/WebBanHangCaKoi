@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giới thiệu</title>
+    <link rel="stylesheet" href="/css/about.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <section>
+      <div th:replace="~{header :: header}"></div>
+      <div class="main" id="home">
+        <div class="main-container">
+          <div class="main-text">
+            <h1>KOI NHẬT BẢN CAO CẤP - NISHIKIGOI CHẤT LƯỢNG TỪ NIIGATA"</h1>
+            <p>
+              Cá Koi, hay còn gọi là Nishikigoi, từ lâu đã được biết đến như
+              biểu tượng của sự may mắn, thịnh vượng và trường thọ trong văn hóa
+              Nhật Bản. Đặc biệt, cá Koi từ vùng Niigata nổi tiếng khắp thế giới
+              với chất lượng vượt trội, màu sắc rực rỡ và hoa văn độc đáo. Tại
+              đây, qua nhiều thế hệ, những nghệ nhân nuôi cá Koi đã không ngừng
+              nghiên cứu và hoàn thiện phương pháp nuôi dưỡng, tạo ra những
+              giống cá tuyệt đẹp, được săn đón bởi những người yêu thích cá Koi
+              trên toàn cầu. Chúng tôi tự hào mang đến cho bạn những chú cá Koi
+              cao cấp nhất, được lựa chọn cẩn thận từ các trang trại tại
+              Niigata, đảm bảo sức khỏe và vẻ đẹp hoàn mỹ.
+            </p>
+          </div>
+          <div class="main-img">
+            <img src="/images/koi.png" alt="" />
+          </div>
+        </div>
+        <div class="social-icons">
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-weibo"></i>
+          <i class="fa-brands fa-tiktok"></i>
+        </div>
+        <div class="button">
+          <a href="#">Tìm hiểu ngay</a>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </div>
+    </section>
+    <section id="Introduces">
+      <div class="about">
+        <div class="about_main">
+          <div class="about_img">
+            <div class="about_small_img">
+              <img src="/images/koi4.jpg" alt="" onclick="functio(this)" />
+              <img src="/images/koi5.jpg" alt="" onclick="functio(this)" />
+              <img src="/images/koi6.jpg" alt="" onclick="functio(this)" />
+              <img src="/images/koi7.jpg" alt="" onclick="functio(this)" />
+            </div>
+            <div class="img_container">
+              <img src="/images/koi4.jpg" alt="" id="imgbox" />
+            </div>
+          </div>
+          <div class="about_text">
+            <p>
+              Cửa hàng bán cá koi trực tuyến thường có giao diện sạch sẽ và dễ
+              sử dụng, giúp khách hàng dễ dàng tìm kiếm và chọn mua các loại cá
+              koi. Trên trang web, hình ảnh các chú cá koi được chụp rõ nét, với
+              các thông tin chi tiết về kích thước, màu sắc, giống loài và giá
+              cả. Ngoài ra, web còn cung cấp các sản phẩm liên quan như thức ăn,
+              hệ thống lọc nước, và phụ kiện cho hồ cá. Các bài viết hướng dẫn
+              chăm sóc cá koi, xử lý bệnh tật, hay thiết kế hồ cá cũng thường
+              được tích hợp để giúp khách hàng có thêm kiến thức. Chức năng mua
+              hàng tiện lợi với giỏ hàng, các tùy chọn thanh toán linh hoạt và
+              dịch vụ giao hàng tận nơi, giúp người mua có trải nghiệm thuận
+              tiện và an tâm.
+            </p>
+          </div>
+        </div>
+        <div class="video-container">
+          <video id="video" width="600" height="340" autoplay muted loop>
+            <source
+              src="../images/nhạc-chill-thư-giãn-xem-cá-koi-tương-hổ-nhạc-phim-ost-thanh-lọc-tâm-hồn.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        <a href="/Fish" class="about_btn">Welcome!</a>
+      </div>
+    </section>
+    <!--Footer-->
+    <footer th:replace="~{footer :: footer}"></footer>
+    <script src="/js/about.js"></script>
+  </body>
+</html>

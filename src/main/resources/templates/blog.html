@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tin tức</title>
+    <link rel="stylesheet" href="/css/blog.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <section>
+      <div th:replace="~{header :: header}"></div>
+      <div class="main" id="home">
+        <div class="main-container">
+          <div class="main-text">
+            <h1>THẾ GIỚI CÁ KOI NHẬT BẢN - CHẤT LƯỢNG HÀNG ĐẦU</h1>
+            <p>
+              Tin tức về cá koi thường rất sôi động và đa dạng, từ các sự kiện
+              triển lãm đến những nghiên cứu mới trong lĩnh vực nuôi cá. Gần
+              đây, nhiều cuộc thi cá koi đã được tổ chức trên toàn thế giới, thu
+              hút hàng ngàn người tham gia và yêu thích. Những cuộc thi này
+              không chỉ là nơi các nhà nuôi cá trình diễn những con cá tuyệt đẹp
+              mà còn là dịp để giao lưu, chia sẻ kinh nghiệm nuôi dưỡng và chăm
+              sóc cá. Bên cạnh đó, các nghiên cứu về dinh dưỡng và sức khỏe của
+              cá koi cũng đang được chú trọng. Nhiều chuyên gia đã phát triển
+              các loại thức ăn bổ dưỡng, giúp cá koi phát triển khỏe mạnh và có
+              màu sắc rực rỡ hơn. Ngoài ra, với xu hướng bảo tồn thiên nhiên
+              ngày càng gia tăng, nhiều tổ chức đã bắt đầu các chương trình bảo
+              tồn cá koi hoang dã, nhằm duy trì giống loài này trong tự nhiên.
+              Những thông tin này không chỉ làm phong phú thêm kiến thức về cá
+              koi mà còn góp phần thúc đẩy sự phát triển bền vững trong ngành
+              nuôi cá cảnh.
+            </p>
+          </div>
+          <div class="main-img">
+            <img src="/images/koi.png" alt="" />
+          </div>
+        </div>
+        <div class="social-icons">
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-weibo"></i>
+          <i class="fa-brands fa-tiktok"></i>
+        </div>
+        <div class="button">
+          <a href="#blog" onclick="scrollToClass(event, 'section')"
+            >Tìm hiểu ngay</a
+          >
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </div>
+    </section>
+
+    <section id="blogs">
+      <div class="blog-box">
+        <div class="blog-img">
+          <a href="https://zenkoifarm.vn/ca-koi-la-ca-gi/">
+            <img src="/images/blog.jpg" alt="" />
+          </a>
+        </div>
+        <div class="blog-details">
+          <h1>Cá Koi Là Cá Gì ? Nguồn Gốc, Phân Loai, Ý Nghĩa Phong Thuỷ.</h1>
+          <p>
+            Cá Koi là cá gì? Nguồn gốc và phân loại các loại cá Koi? Ý nghĩa phong thủy đặc biệt của loài cá koi?
+          </p>
+          <a href="https://zenkoifarm.vn/ca-koi-la-ca-gi/">Continue reading</a>
+        </div>
+      </div>
+      <div class="blog-box">
+        <div class="blog-img">
+          <a href="https://thegioicayxanh.com.vn/vi-sao-ho-ca-koi-khong-nen-dat-qua-gan-nha.html">
+            <img src="/images/blog1.jpg" alt="" />
+          </a>
+        </div>
+        <div class="blog-details">
+          <h1>Vì sao hồ cá Koi không nên đặt quá gần nhà?</h1>
+          <p>
+            Vì sao hồ cá Koi không nên đặt quá gần nhà? Xem ngay để tránh kẻo
+            lãng phí lớn! thi công hồ cá koi tphcm, thiết kế thi công hồ...
+          </p>
+          <a href="https://thegioicayxanh.com.vn/vi-sao-ho-ca-koi-khong-nen-dat-qua-gan-nha.html">Continue reading</a>
+        </div>
+      </div>
+      <div class="blog-box">
+        <div class="blog-img">
+          <a href="https://thegioicayxanh.com.vn/luu-y-he-thong-loc-nuoc-khi-thiet-ke-thi-cong-ho-ca-koi.html">
+            <img src="/images/blog2.jpg" alt="" />
+          </a>
+        </div>
+        <div class="blog-details">
+          <h1>Lưu ý hệ thống lọc nước khi thiết kế thi công hồ cá koi</h1>
+          <p>
+            Lưu ý hệ thống lọc nước khi thiết kế thi công hồ cá koi, Tìm hiểu về
+            hệ thống nước của hồ cá Koi- ai cũng nên xem ngay kẻo...
+          </p>
+          <a href="https://thegioicayxanh.com.vn/luu-y-he-thong-loc-nuoc-khi-thiet-ke-thi-cong-ho-ca-koi.html">Continue reading</a>
+        </div>
+      </div>
+    </section>
+    <!--Footer-->
+    <footer th:replace="~{footer :: footer}"></footer>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

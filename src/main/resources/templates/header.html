@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Header</title>
+</head>
+<body data-user-id="[[${userId}]]">
+<nav th:fragment="header" class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="logo">
+    <input type="hidden" id="userid" th:value="${user != null ? (user.id != null && user.id != 0 ? user.id : 'null') : 'null'}"/>
+    <a href="/Home"><h1>KOI<span>.</span>FISH</h1></a>
+  </div>
+  <ul>
+    <li>
+      <a id="index" href="/Home" th:classappend="${currentUrl == '/Home' ? 'active' : ''}">Trang chủ</a>
+    </li>
+    <li>
+      <a id="introduce" href="/Introduce" th:classappend="${currentUrl == '/Introduce' ? 'active' : ''}">Giới thiệu</a>
+    </li>
+    <li>
+      <a id="trip" href="/Trip" th:classappend="${currentUrl == '/Trip' ? 'active' : ''}">Chuyến đi </a>
+    </li>
+    <li>
+      <a id="fish" href="/Fish" th:classappend="${currentUrl == '/Fish' ? 'active' : ''}">Sản phẩm</a>
+    </li>
+    <li>
+      <a id="blog" href="/Blog" th:classappend="${currentUrl == '/Blog' ? 'active' : ''}">Tin tức</a>
+    </li>
+    <li>
+      <a id="contact" href="/Contact" th:classappend="${currentUrl == '/Contact' ? 'active' : ''}">Liên hệ</a>
+    </li>
+  </ul>
+  <div class="icons">
+    <a href="/Cart"><i class="fa-solid fa-cart-shopping"></i></a>
+    <div class="header_account">
+      <!-- Display Login Icon if user is not logged in -->
+      <a href="/user/login" class="header_account_icon" th:if="${session.loggedInUserId == null}">
+        <i class="fa-regular fa-user"></i>
+      </a>
+      <!-- Display Profile Icon with dropdown if user is logged in -->
+      <a href="#" class="header_account_icon" th:if="${session.loggedInUserId != null}" th:classappend="'logged-in'">
+        <i class="fa-regular fa-user"></i>
+      </a>
+      <div th:if="${session.loggedInUserId != null}" class="dropdown">
+        <a href="/user/profile">Profile</a>
+        <a href="/user/logout">Logout</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+</body>
+</html>

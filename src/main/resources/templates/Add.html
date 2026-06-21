@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thêm sản phẩm mới</title>
+</head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .add-product {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: auto;
+  }
+
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+
+  input, textarea, select {
+    font-family: Arial, sans-serif; /* Đảm bảo font chữ giống nhau */
+    width: 90%; /* Điều chỉnh độ rộng để có khoảng trống hai bên */
+    padding: 10px;
+    margin: 10px auto; /* Căn giữa theo chiều ngang */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block; /* Đảm bảo block để margin:auto hoạt động */
+  }
+
+  input:focus {
+    border-color: #28a745;
+    outline: none;
+  }
+
+  button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  button:hover {
+    background-color: #218838;
+  }
+</style>
+
+<body>
+<section class="add-product">
+  <h2>Thêm sản phẩm mới</h2>
+  <form id="addProductForm">
+    <input type="text" id="name" placeholder="Tên sản phẩm" required />
+    <select id=origin>
+      <option value="">Chọn nguồn gốc</option>
+    </select>
+    <textarea id="description" placeholder="Mô tả sản phẩm" required></textarea>
+    <input type="number" id="price" min="0" placeholder="Giá" required />
+    <input type="text" id="imageUrl" placeholder="URL hình ảnh" required />
+    <input type="number" id="rating" placeholder="Đánh giá" step="0.5" min="0" max="5" required />
+    <button type="submit">Thêm sản phẩm</button>
+  </form>
+</section>
+
+<script>
+  document.getElementById("addProductForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Ngừng gửi form mặc định
+
+    const newProduct = {
+      name: document.getElementById("name").value,
+      description: document.getElementById("description").value,
+      price: parseFloat(document.getElementById("price").value),
+      imageUrl: document.getElementById("imageUrl").value,
+      rating: parseFloat(document.getElementById("rating").value),
+      origin: document.getElementById("origin").value,
+    };
+
+    // Kiểm tra dữ liệu
+    if (!newProduct.name || !newProduct.description || !newProduct.price || !newProduct.imageUrl || !newProduct.rating || !newProduct.origin) {
+      alert("Vui lòng điền đầy đủ thông tin sản phẩm!");
+      return;
+    }
+
+    // Gửi yêu cầu POST đến API
+    fetch('/products/add', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newProduct)
+    })
+            .then(response => {
+              if (!response.ok) {
+                throw new Error('Lỗi từ server');
+              }
+              return response.json();
+            })
+            .then(data => {
+              console.log('Sản phẩm đã được thêm:', data);
+              alert('Sản phẩm đã được thêm thành công!');
+              document.getElementById("addProductForm").reset(); // Làm sạch form
+            })
+            .catch(error => {
+              console.error('Có lỗi xảy ra:', error);
+              alert('Đã xảy ra lỗi khi thêm sản phẩm!');
+            });
+  });
+  // Khi trang tải xong, lấy dữ liệu từ server và chèn vào <select>
+  document.addEventListener("DOMContentLoaded", function () {
+    fetch('/trips')
+            .then(response => response.json())
+            .then(data => {
+              const select = document.getElementById('origin');
+              data.forEach(trips => {
+                const option = document.createElement('option');
+                option.value = trips.name;
+                option.textContent = trips.name;
+                select.appendChild(option);
+              });
+            })
+            .catch(error => console.error('Error fetching locations:', error));
+  });
+</script>
+</body>
+
+</html>

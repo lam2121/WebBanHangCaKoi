@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Fish</title>
+
+    <!-- font awesome cdn link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- custom admin css file link -->
+    <link rel="stylesheet" href="/css/admin_style.css" />
+  </head>
+
+  <body>
+  <header class="header">
+    <div class="flex">
+      <a href="/Admin" class="logo">Admin<span>Panel</span></a>
+
+      <nav class="navbar">
+        <a href="/Admin">Trang chủ</a>
+        <a href="/AdminProduct">Sản phẩm</a>
+        <a href="/AdminTrip">Chuyến đi</a>
+        <a href="/AdminOrderFish">Đặt hàng</a>
+        <a href="/AdminOrderTrip">Đặt chuyến đi</a>
+        <a href="/AdminUser">Users</a>
+      </nav>
+
+      <div class="icons">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <div id="user-btn" class="iconss">
+          <a href="../Login/login.html" class="icon"
+          ><i class="fa-regular fa-user"></i
+          ></a>
+        </div>
+      </div>
+
+      <div class="account-box">
+        <p>Tên người dùng : <span>Admin Name</span></p>
+        <p>email : <span>admin@example.com</span></p>
+        <a href="logout.html" class="delete-btn">Logout</a>
+        <div>
+          <a href="../Login/login.html">Đăng nhập</a> |
+          <a href="../Login/login.html">Đăng xuất</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Dropdown để chọn trạng thái -->
+  <section class="sort-section">
+    <label for="orderStatus">Chọn trạng thái đơn hàng:</label>
+    <select id="orderStatus">
+      <option value="Dang duyet">Đang duyệt</option>
+      <option value="Da duyet">Đã duyệt</option>
+      <option value="Da nhan hang">Đã nhận hàng</option>
+    </select>
+    <button type="button" onclick="sortOrders()">Sắp xếp</button>
+  </section>
+
+  <section class="orders">
+      <h1 class="title">Đơn đặt hàng</h1>
+
+      <div class="box-container">
+        <!-- Static order example -->
+        <!-- Add more static orders as needed -->
+        <p class="empty">Chưa có đơn hàng nào được đặt!</p>
+      </div>
+    </section>
+    <!-- custom admin js file link -->
+    <script src="/js/admin_orders.js"></script>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chuyến đi</title>
+    <link rel="stylesheet" href="/css/trip.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <section>
+      <div th:replace="~{header :: header}"></div>
+      <div class="main" id="home">
+        <div class="main-container">
+          <div class="main-text">
+            <h1>KOI NHẬT BẢN CAO CẤP - NISHIKIGOI CHẤT LƯỢNG TỪ NIIGATA"</h1>
+            <p>
+              Chuyến đi cá koi là một trải nghiệm thú vị và độc đáo cho những ai
+              yêu thích thiên nhiên và sự yên bình. Bạn sẽ được đến những hồ cá
+              koi tuyệt đẹp, nơi những con cá koi đủ màu sắc bơi lội trong làn
+              nước trong xanh. Không khí trong lành và âm thanh của nước chảy
+              tạo nên một không gian thư giãn tuyệt vời. Trong chuyến đi, bạn có
+              thể tham gia vào việc cho cá ăn, tìm hiểu về lịch sử và ý nghĩa
+              của cá koi trong văn hóa Nhật Bản. Những buổi chiều dạo bộ quanh
+              hồ hoặc ngồi bên bờ nước, ngắm nhìn những con cá tung tăng bơi
+              lội, chắc chắn sẽ mang lại cho bạn cảm giác bình yên và hạnh phúc.
+              Đừng quên chụp lại những khoảnh khắc đẹp để lưu giữ kỷ niệm trong
+              chuyến đi này!
+            </p>
+          </div>
+          <div class="main-img">
+            <img src="/images/koi.png" alt="" />
+          </div>
+        </div>
+        <div class="social-icons">
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-weibo"></i>
+          <i class="fa-brands fa-tiktok"></i>
+        </div>
+        <div class="button">
+          <a href="#Trips">Tìm hiểu ngay</a>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </div>
+    </section>
+    <section id="Trips">
+      <div class="input-group">
+        <input
+                aria-describedby="button-addon2"
+                aria-label="Recipient's username"
+                class="form-control"
+                id="search-inp"
+                placeholder="Tìm kiếm sản phẩm..."
+                type="text"
+        />
+        <button
+                class="btn btn-outline-secondary bg-warning"
+                id="button-addon2"
+                onclick="searchTrips()"
+                type="button"
+        >
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+      <div class="about" id="body">
+        <--API-->
+      </div>
+      <div class="contact">
+        <form id="addOrderTripForm" action="" method="post">
+          <h3>Đặt chuyến đi</h3>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="Vui lòng nhập tên"
+            class="box"
+          />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="Vui lòng nhập email"
+            class="box"
+          />
+          <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  placeholder="Vui lòng nhập số điện thoại"
+                  class="box"
+          />
+          <select name="location" id="locationSelect">
+            <option id="location" value="">Chọn địa điểm:</option>
+          </select>
+          <label for="tripDate">Chọn ngày muốn đi:</label>
+          <input
+                  type="date"
+                  name="tripDate"
+                  required
+                  class="box"
+                  id="tripDate"
+          />
+          <textarea
+            name="message"
+            id="text"
+            class="box"
+            placeholder="Vui lòng nhập lời nhắn"
+            cols="30"
+            rows="10"
+          ></textarea>
+          <button type="submit" id="submit" name="send" class="btn" >Gửi tin nhắn</button>
+        </form>
+      </div>
+    </section>
+
+    <!--Footer-->
+    <footer th:replace="~{footer :: footer}"></footer>
+    <script src="/js/trip.js"></script>
+  </body>
+</html>

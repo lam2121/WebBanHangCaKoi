@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giỏ hàng</title>
+    <link rel="stylesheet" href="/css/checkout.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <section>
+      <div th:replace="~{header :: header}"></div>
+      <div class="main" id="home">
+        <div class="main-container">
+          <div class="main-text">
+            <h1>
+              CÁ KOI NHẬT BẢN CHẤT LƯỢNG CAO NHẤT (NISHIKIGOI) <br />
+              ĐƯỢC BÁN TỪ NIIGATA, NHẬT BẢN
+            </h1>
+            <p>
+              Cá Koi Nhật Bản chất lượng cao là biểu tượng của sự may mắn, thịnh
+              vượng và kiên trì trong văn hóa Nhật Bản. Được nuôi dưỡng và chọn
+              lọc kỹ lưỡng qua nhiều thế hệ, cá Koi cao cấp có màu sắc rực rỡ,
+              đa dạng và hoa văn đặc biệt, tạo nên giá trị thẩm mỹ cao. Để đạt
+              được chất lượng cao nhất, cá Koi cần môi trường nước sạch, thức ăn
+              dinh dưỡng và sự chăm sóc tỉ mỉ. Ngoài ra, giống cá cũng đóng vai
+              trò quan trọng trong việc quyết định độ đẹp và độ khỏe mạnh của
+              cá. Những con cá Koi xuất sắc thường có giá trị rất cao, không chỉ
+              về mặt kinh tế mà còn về tinh thần, được xem như biểu tượng của sự
+              trường thọ và hạnh phúc trong văn hóa người nuôi cá trên khắp thế
+              giới.
+            </p>
+          </div>
+          <div class="main-img">
+            <img src="/images/koi.png" alt="" />
+          </div>
+        </div>
+        <div class="social-icons">
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-weibo"></i>
+          <i class="fa-brands fa-tiktok"></i>
+        </div>
+        <div class="button">
+          <a href="#">Tìm hiểu ngay</a>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </div>
+    </section>
+    <section class="container">
+      <div class="cart">
+        <table width="100%">
+          <thead>
+          <tr>
+            <td>Remove</td>
+            <td>Image</td>
+            <td>Product</td>
+            <td>Price</td>
+            <td>Quantity</td>
+            <td>Total</td>
+          </tr>
+          </thead>
+          <tbody id="cartItems">
+          <!-- Các sản phẩm sẽ được chèn tại đây -->
+          </tbody>
+        </table>
+      </div>
+      <div class="cart-add">
+        <div class="coupon">
+          <h3>Apply coupon</h3>
+          <div>
+            <input id="coupontext"type="text" placeholder="Enter you coupon" />
+            <button class="normal"onclick="AddCoupon()">Apply</button>
+          </div>
+        </div>
+        <div class="total">
+          <h3>Cart total</h3>
+          <table>
+            <tr>
+              <td>Cart total:</td>
+              <td id="cartTotal">0<sup>đ</sup></td>
+            </tr>
+            <tr>
+              <td>Shipping:</td>
+              <td>Free</td>
+            </tr>
+            <tr>
+              <td>Coupon</td>
+              <td id="cartCoupon">0<sup>đ</sup></td>
+            </tr>
+            <tr>
+              <td><strong>Total:</strong></td>
+              <td id="cartGrandTotal"><strong>0<sup>đ</sup></strong></td>
+            </tr>
+          </table>
+          <a href="/Pay"><button class="normal" id="checkout">Proceed to checkout</button></a>
+        </div>
+      </div>
+    </section>
+    <!--Footer-->
+    <footer th:replace="~{footer :: footer}"></footer>
+    <script src="/js/checkout.js"></script>
+    <!-- JavaScript để gọi API và hiển thị sản phẩm trong giỏ hàng -->
+  </body>
+</html>

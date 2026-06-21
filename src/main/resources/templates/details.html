@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chi tiết sản phẩm</title>
+    <link rel="stylesheet" href="/css/details.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <section>
+      <div th:replace="~{header :: header}"></div>
+      <div class="main" id="home">
+        <div class="main-container">
+          <div class="main-text">
+            <h1>THẾ GIỚI CÁ KOI NHẬT BẢN - CHẤT LƯỢNG HÀNG ĐẦU</h1>
+            <p>
+              Thế Giới Cá Koi Nhật Bản - Chất Lượng Hàng Đầu là nơi hội tụ những
+              chú cá Koi Nhật Bản cao cấp nhất, đặc biệt được chọn lọc từ
+              Niigata – quê hương của dòng cá Nishikigoi huyền thoại. Chúng tôi
+              tự hào mang đến cho khách hàng những chú cá Koi với màu sắc rực
+              rỡ, hoa văn tinh tế và sức khỏe vượt trội. Mỗi chú cá đều được
+              chăm sóc kỹ lưỡng và nuôi dưỡng trong môi trường chuẩn Nhật Bản,
+              đảm bảo đạt tiêu chuẩn chất lượng cao nhất. Đến với Thế Giới Cá
+              Koi Nhật Bản, bạn sẽ có cơ hội sở hữu những tuyệt phẩm Koi quý
+              hiếm, nâng tầm vẻ đẹp cho không gian sống của bạn.
+            </p>
+          </div>
+          <div class="main-img">
+            <img src="/images/koi.png" alt="" />
+          </div>
+        </div>
+        <div class="social-icons">
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-weibo"></i>
+          <i class="fa-brands fa-tiktok"></i>
+        </div>
+        <div class="button">
+          <a href="#">Tìm hiểu ngay</a>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </div>
+    </section>
+    <!---Product---->
+    <section class="Details">
+      <div class="prodetails">
+        <div class="s-p-image">
+          <img id="productImage" width="100%" alt="Product Image" />
+        </div>
+        <div class="single-pro-details" style="width: 50%">
+          <h4 id="productName"></h4> <!-- Tên sản phẩm -->
+          <h2 id="productPrice"></h2> <!-- Giá sản phẩm -->
+          <h4>Chi tiết sản phẩm</h4>
+          <div class="info">
+            <span id="productOrigin"></span> </br>
+            <span id="productDescription"></span> <!-- Mô tả sản phẩm -->
+          </div>
+          <div class="cart">
+            <input type="number" value="1" min="0"/>
+            <div class="buttons">
+              <button id="btn-cart" onclick="AddToCart()"><i class="fa-solid fa-cart-shopping"></i> Add to cart</button>
+              <button id="btn" onclick="BookFish()">Đặt trước</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Footer-->
+    <footer th:replace="~{footer :: footer}"></footer>
+    <script src="/js/details.js"></script>
+  </body>
+</html>

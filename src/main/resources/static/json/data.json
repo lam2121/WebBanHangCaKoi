@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "title": "Koi Kohaku",
+    "description": "Koi Kohaku Là dòng Koi được yêu thích nhất. Là dòng Koi được lai tạo đầu tiên tại Nhật. Có lịch sử lâu đời (từ TK 19). Koi nổi bật với nước da trắng hơn tuyết, các điểm đỏ Hi lớn, phân bố đều, hài hòa trên thân. Kohaku nghĩa là đỏ và trắng. Kohaku gồm 7 phiên bản: menkaburi Kohaku; Kuchibeni Kohaku; Inazuma Kohalku; Maruten Kohaku; Straight Hi-kohaku; Tancho Kohaku; Doitsu Kohaku; Nidan Kohaku; Ginrin kohaku",
+    "price": 400000,
+    "img": "../img/koi9.jpg",
+    "status": "Enabled"
+  },
+  {
+    "id": 2,
+    "title": "Koi Ogon",
+    "description": "Cá Koi Ogon Là dòng koi màu ánh bạc kim loại, thuộc dòng đơn sắc, 1 màu. 3 màu phổ biến nhất: vàng, bạch kim, cam. Được nhân giống năm 1946 từ nhà lai tạo Satawa Aoki từ 1 con chép vàng hoang dã ông mua năm 1921. Koi Ogon được lai tạo với 6 siêu phẩm màu sắc khác nhau, cấu trúc body chắc chắn, khỏe mạnh bao gồm: Platinium Ogon, Yamabuki Ogon, Hi Ogon, Orenji Ogon, Mukashi Ogon.",
+    "price": 400000,
+    "img": "../img/koi10.jpg",
+    "status": "Enabled"
+  },
+  {
+    "id": 3,
+    "title": "Koi Showa",
+    "description": "Cá Koi Showa (Showa sanshoku) Lai tạo thành công năm 1927 từ Koi kohaku. 3 màu chính trên thân: đỏ (Hi), đen (sumi), trắng (Shiroji). Koi Showa có mảng Sumi màu đen lớn hơn, lan rộng ở đầu (trong khi sanke không có màu đen trên đầu – là dấu hiệu phân biệt với sanke). Nhiều người nhầm lẫn Showa với sanke vì màu sắc giống nhau nhưng showa da có nền đen; trắng và đỏ là những mảng màu trên nền đen ấy. Sanke thì nền da trắng; đen và đỏ là những vệt màu trên nền trắng đó. Showa bao gồm dòng: Hi Showa; Kinsai showa; Tancho Showa; Maruten Showa; Doitsu Showa; Ginrin Showa.",
+    "price": 400000,
+    "img": "../img/koi11.jpg",
+    "status": "Enabled"
+  },
+  {
+    "id": 4,
+    "title": "Koi Tancho",
+    "description": "Cá Koi Tancho: Có mảng đỏ Hi to tròn trên đỉnh đầu. Mình trắng muốt. Biểu tượng “quốc kỳ sống” của Nhật Bản. Gồm 3 loại: Tancho Showa; Tancho Sanke; Tancho Goshiki.",
+    "price": 400000,
+    "img": "../img/koi4.jpg",
+    "status": "Enabled"
+  },
+  {
+    "id": 5,
+    "title": "Koi Beiko",
+    "description": "Cá Koi Bekko: Cùng họ với Koi Utsuri khác ở điểm Koi bekko có đốm đen trên thân nhỏ hơn so với Utsuri. Hoa văn cũng khác. Nếu so tính thẩm mỹ thì Utsiri chiếm ưu thế hơn.",
+    "price": 400000,
+    "img": "../img/koi5.jpg",
+    "status": "Enabled"
+  },
+  {
+    "id": 6,
+    "title": "Koi Doitsu",
+    "description": "Cá Koi Doitsu Là dòng Koi da trơn, có hàng vảy rồng to, đều đối xứng nhau 2 bên lưng. Một số em Koi Doitsu còn cả hàng vảy rồng chạy dọc 2 bên hông",
+    "price": 400000,
+    "img": "../img/koi6.jpg",
+    "status": "Enabled"
+  },
+  {
+    "id": 7,
+    "title": "Koi Ginrin",
+    "description": "Cá Koi Doitsu Là dòng Koi da trơn, có hàng vảy rồng to, đều đối xứng nhau 2 bên lưng. Một số em Koi Doitsu còn cả hàng vảy rồng chạy dọc 2 bên hông",
+    "price": 400000,
+    "img": "../img/koi7.jpg",
+    "status": "Enabled"
+  },
+  {
+    "id": 8,
+    "title": "Koi Goshiki",
+    "description": "Cá Koi Goshiki: Có màu nền trắng với mắt lưới màu đen và xanh, được phủ bởi các đốm màu nâu đỏ như Kohaku. Goshiki khi ở trong nước lạnh màu sắc sẽ tối hơn so với nhiệt độ thường. 1 em Goshiki đẹp phải có đầu sạch, màu trắng và đỏ. Đỉnh đầu không có bất kỳ Sumi đen nào.",
+    "price": 400000,
+    "img": "../img/koi8.jpg",
+    "status": "Enabled"
+  }
+]

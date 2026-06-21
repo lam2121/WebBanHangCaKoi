@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liên hệ</title>
+    <link rel="stylesheet" href="/css/contact.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <section>
+      <div th:replace="~{header :: header}"></div>
+      <div class="main" id="home">
+        <div class="main-container">
+          <div class="main-text">
+            <h1>THẾ GIỚI CÁ KOI NHẬT BẢN - CHẤT LƯỢNG HÀNG ĐẦU</h1>
+            <p>
+              Nếu bạn đang tìm kiếm thông tin hoặc có những câu hỏi về cá koi,
+              đừng ngần ngại liên hệ với mình! Mình rất vui được chia sẻ kiến
+              thức và kinh nghiệm về cách nuôi dưỡng, chăm sóc cũng như các sản
+              phẩm liên quan đến cá koi. Cho dù bạn là người mới bắt đầu hay đã
+              có kinh nghiệm, mình sẵn lòng hỗ trợ và cung cấp những mẹo hữu ích
+              để giúp bạn có một bể cá đẹp và khỏe mạnh. Hãy để lại tin nhắn
+              hoặc gọi cho mình, và chúng ta có thể cùng thảo luận về niềm đam
+              mê chung này!
+            </p>
+          </div>
+          <div class="main-img">
+            <img src="/images/koi.png" alt="" />
+          </div>
+        </div>
+        <div class="social-icons">
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-weibo"></i>
+          <i class="fa-brands fa-tiktok"></i>
+        </div>
+        <div class="button">
+          <a href="#contact-details">Tìm hiểu ngay</a>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </div>
+    </section>
+    <section id="contact-details" class>
+      <div class="details">
+        <span>LIÊN HỆ</span>
+        <h2>Ghé thăm trụ sở của chúng tôi</h2>
+        <h3>Trụ sở chính</h3>
+        <div>
+          <li>
+            <i class="fa-regular fa-map"></i>
+            <p>北京，中国</p>
+          </li>
+          <li>
+            <i class="fa-regular fa-envelope"></i>
+            <p>Nhom10@gmail.com</p>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone"></i>
+            <p>0911809129</p>
+          </li>
+          <li>
+            <i class="fa-regular fa-clock"></i>
+            <p>8:00 - 17:00</p>
+          </li>
+        </div>
+      </div>
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d391569.010282734!2d116.06780039046231!3d39.93841699575795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35f05296e7142cb9%3A0xb9625620af0fa98a!2zQuG6r2MgS2luaCwgVHJ1bmcgUXXhu5Fj!5e0!3m2!1svi!2s!4v1728464015751!5m2!1svi!2s"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+    <!--Footer-->
+    <footer th:replace="~{footer :: footer}"></footer>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

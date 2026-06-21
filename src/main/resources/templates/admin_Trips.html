@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Trips</title>
+    <!-- Font Awesome CDN Link -->
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Custom Admin CSS File Link -->
+    <link rel="stylesheet" href="/css/admin_style.css" />
+</head>
+
+<body>
+<header class="header">
+    <div class="flex">
+        <a href="/Admin" class="logo">Admin<span>Panel</span></a>
+
+        <nav class="navbar">
+            <a href="/Admin">Trang chủ</a>
+            <a href="/AdminProduct">Sản phẩm</a>
+            <a href="/AdminTrip">Chuyến đi</a>
+            <a href="/AdminOrderFish">Đặt hàng</a>
+            <a href="/AdminOrderTrip">Đặt chuyến đi</a>
+            <a href="/AdminUser">Users</a>
+        </nav>
+
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <div id="user-btn" class="iconss">
+                <a href="../Login/login.html" class="icon"
+                ><i class="fa-regular fa-user"></i
+                ></a>
+            </div>
+        </div>
+
+        <div class="account-box">
+            <p>Tên người dùng : <span>Admin Name</span></p>
+            <p>email : <span>admin@example.com</span></p>
+            <a href="logout.html" class="delete-btn">Logout</a>
+            <div>
+                <a href="../Login/login.html">Đăng nhập</a> |
+                <a href="../Login/login.html">Đăng xuất</a>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="add-products">
+    <h1 class="title">Manage Trips</h1>
+    <form id="addTripForm">
+        <h3>Add Trip</h3>
+        <input
+                type="text"
+                id="name"
+                name="name"
+                class="box"
+                placeholder="Tên chuyến đi"
+                required
+        />
+        <input
+                type="text"
+                name="image"
+                id="imageUrl"
+                class="box"
+                placeholder="URL hình ảnh"
+                required
+        />
+        <textarea id="description" class="box" placeholder="Mô tả chuyến đi" required></textarea>
+        <button type="submit">Thêm chuyến đi</button>
+    </form>
+</section>
+<!-- Product CRUD Section Ends -->
+<!-- Show Products -->
+<section class="show-products">
+    <div class="box-container">
+        <!-- Example of Static Product -->
+        <!-- Add more static products as needed -->
+    </div>
+</section>
+
+<!-- Edit Product Form -->
+<section class="edit-trip-form">
+    <!-- Static example of Edit Product Form -->
+    <form id="editTripForm">
+        <h3>Edit Trips</h3>
+        <input
+                type="text"
+                name="update_name"
+                id="name_updated"
+                class="box"
+                required
+                placeholder="Tên chuyến đi"
+        />
+        <input
+                type="text"
+                class="box"
+                name="update_image"
+                id="imageUrl_updated"
+                placeholder="URL hình ảnh"
+                required
+        />
+        <textarea id="description_updated" class="box" placeholder="Mô tả sản phẩm" required></textarea>
+        <div class="button-container">
+            <button type="submit" class="update-btn">Cập nhật chuyến đi</button>
+            <button type="button" class="close-btn" onclick="Close()">Đóng</button>
+        </div>
+    </form>
+</section>
+
+<!-- Custom Admin JS File Link -->
+<script src="/js/admin_trips.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xóa sản phẩm</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .delete-product {
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        margin: auto;
+        text-align: center; /* Căn giữa nội dung */
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+    }
+
+    input {
+        width: 90%; /* Điều chỉnh độ rộng để có khoảng trống hai bên */
+        padding: 10px;
+        margin: 10px auto; /* Căn giữa theo chiều ngang */
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        display: block; /* Đảm bảo block để margin:auto hoạt động */
+    }
+
+    input:focus {
+        border-color: #dc3545;
+        outline: none;
+    }
+
+    button {
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    button:hover {
+        background-color: #c82333;
+    }
+</style>
+
+<body>
+<section class="delete-product">
+    <h2>Xóa sản phẩm</h2>
+    <form id="deleteProductForm">
+        <input type="number" id="productId" min="0" placeholder="Nhập ID sản phẩm cần xóa" required />
+        <button type="submit">Xóa sản phẩm</button>
+    </form>
+</section>
+
+<script>
+    document.getElementById("deleteProductForm").addEventListener("submit", function (event) {
+        event.preventDefault();  // Ngừng gửi form mặc định
+
+        const productId = document.getElementById("productId").value.trim();
+
+        // Kiểm tra nếu productId không có giá trị thì thông báo và dừng việc gửi yêu cầu
+        if (!productId) {
+            alert("Vui lòng nhập ID sản phẩm cần xóa!");
+            return;
+        }
+
+        // Gửi yêu cầu POST đến API để xóa sản phẩm
+        fetch(`/products/delete/${productId}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(response => {
+                if (response.status === 404) {
+                    // Nếu mã trạng thái là 404, sản phẩm không tồn tại
+                    alert('ID sản phẩm không tồn tại!');
+                    throw new Error('ID sản phẩm không tồn tại');
+                } else if (!response.ok) {
+                    // Nếu có lỗi khác
+                    throw new Error('Có lỗi xảy ra khi xóa sản phẩm');
+                }
+                return response.text();
+            })
+            .then(data => {
+                console.log('Sản phẩm đã được xóa:', data);
+                alert('Sản phẩm đã được xóa thành công!');
+            })
+            .catch(error => {
+                console.error('Có lỗi xảy ra:', error);
+                if (error.message !== 'ID sản phẩm không tồn tại') {
+                    alert('Đã xảy ra lỗi khi xóa sản phẩm!');
+                }
+            });
+    });
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đặt Hàng Trước</title>
+    <link rel="stylesheet" href="../Css/first.css" />
+  </head>
+  <body>
+    <div class="order-form">
+      <h2>Đặt Hàng Trước</h2>
+      <div class="product-image">
+        <img src="/images/koi1.jpg" alt="Hình ảnh sản phẩm" />
+      </div>
+      <div class="product-details">
+        <h3>Tancho Kohaku</h3>
+        <p>
+          Mô tả: Tancho kohaku 84 cm 4 tuổi có nguồn gốc từ Dainichi có hình thể
+          đẹp mắt, dù mới 4 tuổi nhưng kích thước đã lên đến 84cm. Hoa văn đẹp,
+          màu sắc rõ nét, hình thể đẹp, khỏe mạnh, vạm vỡ, body rắn chắc.
+        </p>
+        <p>Giá: <strong>400000đ</strong></p>
+      </div>
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="name">Họ và Tên:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Nhập họ và tên của bạn"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Nhập email của bạn"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="phone">Số Điện Thoại:</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Nhập số điện thoại của bạn"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="quantity">Số Lượng:</label>
+          <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            min="1"
+            placeholder="1"
+            required
+          />
+        </div>
+        <button type="submit" class="submit-btn">Đặt Hàng</button>
+        <button type="submit" onclick="window.location.href='/Product_details/${product.id}'" class="submit-btn">Không đặt</button>
+      </form>
+    </div>
+  </body>
+</html>

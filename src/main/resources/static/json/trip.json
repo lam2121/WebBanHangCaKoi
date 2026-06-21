@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Sakai Fish Farm",
+    "img": "../img/trip.jpg",
+    "description": "Lịch sử chăn nuôi cá Koi của Sakai Fish Farm bắt nguồn từ hơn 130 năm trước. Khoảng năm 1890, người sáng lập của trại cá Sakai – ông Ichiroji Sakai đã bắt đầu nhân giống cá Koi Magoi với mục đích làm thực phẩm. Sau đó ông Tadamichi Sakai đã sử dụng những con cá Magoi đó để lai tạo ra cá Koi khác để làm cá cảnh.Đến thế hệ tiếp theo, ông Koji Sakai (cha của Kentaro Sakai – CEO hiện tại của Sakai Fish Farm) quyết định kinh doanh cá Koi. Thế mạnh của trại cá Koi Sakai là lai tạo cá Koi Kohaku và Sanke.  Kể từ khi đạt được giải Grand Champion All Japan Koi Show năm 2000, Sakai Fish Farm tiếp tục đạt giải quán quân 11 lần cho đến năm 2020."
+  },
+  {
+    "id": 2,
+    "title": "Takeda Koi Farm",
+    "img": "../img/trip1.jpg",
+    "description": "Takeda Koi Farm là một trong các trại cá Koi Nhật Bản được thành lâu từ lâu ở tỉnh Hiroshima. Chủ trại cá Takeda là ông Takeda Tsutomu. Tsutomu là người có kiến thức sâu rộng về các loại cá Koi. Nhờ kinh nghiệm và kiến thức của mình, ông đã biến Takeda Koi Farm trở thành nơi duy trì và nuôi dưỡng phả hệ của Koi Showa. Đại diện hiện tại của trại cá Takeda là ông Atarashiki Yasuhiro đã tạo nên tên tuổi cho trang trại cá vào năm 2010. Thông tin chi tiết của Takeda Koi Farm"
+  },
+  {
+    "id": 3,
+    "title": "Ogata Koi Farm",
+    "img": "../img/trip2.jpg",
+    "description": "Ogata Koi Farm là một trong các trại cá Koi Nhật Bản nổi tiếng và lớn nhất thế giới. Trại cá Ogata được thành lập bởi ông Manabu Ogata vào năm 1972. Một năm sau đó, 2 dòng cá Koi là Kohaku và Sanke được sản sinh. Trại cá không ngừng phát triển lớn mạnh từ năm 1985 và số lượng cá Koi xuất khẩu ngày càng tăng.Trại cá Koi Ogata đã trở thành đối tác uy tín với nhiều khách hàng của nhiều quốc gia. Nhiều đơn vị phân phối cá koi tại Việt Nam đều đến đây để lựa chọn và nhập khẩu về Việt Nam. "
+  }
+]

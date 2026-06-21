@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Products</title>
+    <!-- Font Awesome CDN Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Custom Admin CSS File Link -->
+    <link rel="stylesheet" href="/css/admin_style.css" />
+  </head>
+
+  <body>
+  <header class="header">
+    <div class="flex">
+      <a href="/Admin" class="logo">Admin<span>Panel</span></a>
+
+      <nav class="navbar">
+        <a href="/Admin">Trang chủ</a>
+        <a href="/AdminProduct">Sản phẩm</a>
+        <a href="/AdminTrip">Chuyến đi</a>
+        <a href="/AdminOrderFish">Đặt hàng</a>
+        <a href="/AdminOrderTrip">Đặt chuyến đi</a>
+        <a href="/AdminUser">Users</a>
+      </nav>
+
+      <div class="icons">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <div id="user-btn" class="iconss">
+          <a href="../Login/login.html" class="icon"
+          ><i class="fa-regular fa-user"></i
+          ></a>
+        </div>
+      </div>
+
+      <div class="account-box">
+        <p>Tên người dùng : <span>Admin Name</span></p>
+        <p>email : <span>admin@example.com</span></p>
+        <a href="logout.html" class="delete-btn">Logout</a>
+        <div>
+          <a href="../Login/login.html">Đăng nhập</a> |
+          <a href="../Login/login.html">Đăng xuất</a>
+        </div>
+      </div>
+    </div>
+  </header>
+    <section class="add-products">
+      <h1 class="title">Manage Products</h1>
+      <form id="addProductForm">
+        <h3>Add Product</h3>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="box"
+          placeholder="Tên sản phẩm"
+          required
+        />
+        <select id=origin required>
+          <option value="">Chọn nguồn gốc</option>
+        </select>
+        <input
+          type="number"
+          id="price"
+          min="0"
+          name="price"
+          class="box"
+          placeholder="Giá sản phẩm"
+          required
+        />
+        <input
+          type="text"
+          name="image"
+          id="imageUrl"
+          class="box"
+          placeholder="URL hình ảnh"
+          required
+        />
+        <input type="number" class="box" id="rating" placeholder="Đánh giá" step="0.5" min="0" max="5" required />
+        <textarea id="description" class="box" placeholder="Mô tả sản phẩm" required></textarea>
+        <button type="submit">Thêm sản phẩm</button>
+      </form>
+    </section>
+    <!-- Product CRUD Section Ends -->
+    <!-- Show Products -->
+    <section class="show-products">
+      <div class="box-container">
+        <!-- Example of Static Product -->
+        <!-- Add more static products as needed -->
+      </div>
+    </section>
+
+    <!-- Edit Product Form -->
+    <section class="edit-product-form">
+      <!-- Static example of Edit Product Form -->
+      <form id="editProductForm">
+        <h3>Edit Product</h3>
+        <input
+          type="text"
+          name="update_name"
+          id="name_updated"
+          class="box"
+          required
+          placeholder="Tên sản phẩm"
+        />
+        <select id=origin_updated class="box" required>
+          <option value="">Chọn nguồn gốc</option>
+        </select>
+        <input
+          type="number"
+          name="update_price"
+          id="price_updated"
+          min="0"
+          class="box"
+          required
+          placeholder="Giá sản phẩm"
+        />
+        <input
+          type="text"
+          class="box"
+          name="update_image"
+          id="imageUrl_updated"
+          placeholder="URL hình ảnh"
+          required
+        />
+        <input type="number" class="box" id="rating_updated" placeholder="Đánh giá" step="0.5" min="0" max="5" required />
+        <textarea id="description_updated" class="box" placeholder="Mô tả sản phẩm" required></textarea>
+        <div class="button-container">
+          <button type="submit" class="update-btn">Cập nhật sản phẩm</button>
+          <button type="button" class="close-btn" onclick="Close()">Đóng</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Custom Admin JS File Link -->
+    <script src="/js/admin_products.js"></script>
+  </body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Sản phẩm</title>
+    <link href="../Css/Search.css" rel="stylesheet"/>
+    <link
+            crossorigin="anonymous"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            referrerpolicy="no-referrer"
+            rel="stylesheet"
+    />
+</head>
+<body>
+<section>
+    <nav>
+        <div class="logo">
+            <h1>KOI<span>.</span>FISH</h1>
+        </div>
+        <ul>
+            <li><a class="active" href="/Home" id="index">Trang chủ</a></li>
+            <li><a href="/Introduce" id="introduce">Giới thiệu</a></li>
+            <li><a href="/Trip" id="trip">Chuyến đi</a></li>
+            <li><a href="/Fish" id="fish">Sản phẩm</a></li>
+            <li><a href="/Blog" id="blog">Tin tức</a></li>
+            <li><a href="/Contact" id="contact">Liên hệ</a></li>
+        </ul>
+        <div class="icons">
+            <a href="/Cart"
+            ><i class="fa-solid fa-cart-shopping"></i
+            ></a>
+            <a class="header_account" href="/Login"
+            ><i class="fa-regular fa-user"></i
+            ></a>
+        </div>
+    </nav>
+</section>
+<div class="main" id="home">
+    <section class="Products">
+        <div class="input-group">
+            <input
+                    aria-describedby="button-addon2"
+                    aria-label="Recipient's username"
+                    class="form-control"
+                    id="search-inp"
+                    placeholder="Tìm kiếm sản phẩm..."
+                    type="text"
+            />
+            <button
+                    class="btn btn-outline-secondary bg-warning"
+                    id="button-addon2"
+                    onclick="searchProducts()"
+                    type="button"
+            >
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+
+        <div class="product" id="body">
+            <h1>Các loại cá</h1>
+            <div class="box" id="product-container">
+                <!-- Các sản phẩm sẽ được hiển thị tại đây -->
+            </div>
+        </div>
+    </section>
+</div>
+<!--Footer-->
+<footer>
+    <div class="footer_main">
+        <div class="tag">
+            <h1>Liên hệ</h1>
+            <a href="https://ut.edu.vn/"
+            ><i class="fa-solid fa-house"></i>Trường Đại học Giao Thông Vận Tải
+                TPHCM</a
+            >
+            <a href="tel:+84 911809129"
+            ><i class="fa-solid fa-phone"></i>0911809129</a
+            >
+            <a href="mailto:"
+            ><i class="fa-solid fa-envelope"></i>Nhom10@gmail.com</a
+            >
+        </div>
+
+        <div class="tag">
+            <h1 style="text-align: center">Hỗ trợ</h1>
+            <a href="#" class="center">Câu hỏi thường gặp</a>
+            <a href="" class="center">Vận chuyển</a>
+            <a href="" class="center">Trả hàng</a>
+            <a href="" class="center">Lựa chọn thanh toán</a>
+        </div>
+
+        <div class="tag">
+            <h1>Về chúng tôi</h1>
+            <a href="#" class="center">Việt Nam</a>
+            <a href="" class="center">Trung Quốc</a>
+            <a href="" class="center">Hàn Quốc</a>
+            <a href="" class="center">Mỹ</a>
+        </div>
+
+        <div class="tag">
+            <h1>Theo dõi</h1>
+            <div class="link_social">
+                <a href="https://www.facebook.com/profile.php?id=100024099557081"
+                ><i class="fa-brands fa-facebook-f"></i
+                ></a>
+                <a href="https://www.instagram.com/nguyennnnnn._/"
+                ><i class="fa-brands fa-instagram"></i
+                ></a>
+                <a href="https://m.weibo.cn/"><i class="fa-brands fa-weibo"></i></a>
+                <a href="https://www.tiktok.com/fr/"
+                ><i class="fa-brands fa-tiktok"></i
+                ></a>
+            </div>
+        </div>
+
+        <div class="tag">
+            <h1>Tin mới</h1>
+            <div class="search_bar">
+                <input type="text" placeholder="Your email here..." />
+                <button type="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+    function scrollToClass(event, className) {
+        event.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
+        const element = document.querySelector(`.${className}`);
+        if (element) {
+            element.scrollIntoView({
+                behavior: "smooth", // Cuộn mượt mà
+            });
+        }
+    }
+</script>
+    <!-- Thêm file JavaScript tìm kiếm -->
+    <script src="js/search.js"></script>
+</body>
+</html>

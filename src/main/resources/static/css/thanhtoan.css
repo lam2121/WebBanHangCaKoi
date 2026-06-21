@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #4caf50;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+header a {
+  text-decoration: none;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+header .logo {
+  color: white;
+  background-color: #4caf50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+header .logo .lg {
+  color: white;
+  background-color: #4caf50;
+  max-width: 800px;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.payment-methods {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 20px auto;
+  gap: 20px;
+  justify-content: center;
+}
+
+.payment-option {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.payment-option:hover {
+  transform: scale(1.05);
+}
+
+.payment-option img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.payment-option h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #4caf50;
+}
+
+.payment-option p {
+  font-size: 0.95em;
+  color: #666;
+}

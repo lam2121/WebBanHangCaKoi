@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "title": "Tancho Kohaku",
+    "description": "Tancho kohaku 84 cm 4 tuổi có nguồn gốc từ Dainichi có hình thể đẹp mắt, dù mới 4 tuổi nhưng kích thước đã lên đến 84cm. Hoa văn đẹp, màu sắc rõ nét, hình thể đẹp, khỏe mạnh, vạm vỡ, body rắn chắc.",
+    "price": 400000,
+    "img": "../img/koi1.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Kohaku 94",
+    "description": "Đây là em koi kohaku 6 năm tuổi 94cm được Onkoi nhập trực tiếp từ Dainichi Koi farm. Em koi này thừa hưởng mọi tiêu chuẩn, điều kiện tốt nhất của 1 em koi hoàn hảo, thậm chí dư thừa khả năng tham gia các giải đấu lớn.",
+    "price": 400000,
+    "img": "../img/koi2.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Kohaku 91",
+    "description": "Lại 1 em siêu phẩm kohaku được on koi đưa về từ Dainichi Koi Farm. Đây là em koi kohaku trưởng thành 7 năm tuổi 91 cm, kích thước rất khỏng. Nhìn ở ngoài em ấy như 1 chiếc tàu ngầm lững lững bơi đến đâu thu hút mọi ánh nhìn đến đó.",
+    "price": 400000,
+    "img": "../img/koi3.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Kohaku 91",
+    "description": "Lại 1 em siêu phẩm kohaku được on koi đưa về từ Dainichi Koi Farm. Đây là em koi kohaku trưởng thành 7 năm tuổi 91 cm, kích thước rất khỏng. Nhìn ở ngoài em ấy như 1 chiếc tàu ngầm lững lững bơi đến đâu thu hút mọi ánh nhìn đến đó.",
+    "price": 400000,
+    "img": "../img/koi3.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Kohaku 91",
+    "description": "Lại 1 em siêu phẩm kohaku được on koi đưa về từ Dainichi Koi Farm. Đây là em koi kohaku trưởng thành 7 năm tuổi 91 cm, kích thước rất khỏng. Nhìn ở ngoài em ấy như 1 chiếc tàu ngầm lững lững bơi đến đâu thu hút mọi ánh nhìn đến đó.",
+    "price": 400000,
+    "img": "../img/koi3.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Kohaku 91",
+    "description": "Lại 1 em siêu phẩm kohaku được on koi đưa về từ Dainichi Koi Farm. Đây là em koi kohaku trưởng thành 7 năm tuổi 91 cm, kích thước rất khỏng. Nhìn ở ngoài em ấy như 1 chiếc tàu ngầm lững lững bơi đến đâu thu hút mọi ánh nhìn đến đó.",
+    "price": 400000,
+    "img": "../img/koi3.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Kohaku 91",
+    "description": "Lại 1 em siêu phẩm kohaku được on koi đưa về từ Dainichi Koi Farm. Đây là em koi kohaku trưởng thành 7 năm tuổi 91 cm, kích thước rất khỏng. Nhìn ở ngoài em ấy như 1 chiếc tàu ngầm lững lững bơi đến đâu thu hút mọi ánh nhìn đến đó.",
+    "price": 400000,
+    "img": "../img/koi3.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Kohaku 91",
+    "description": "Lại 1 em siêu phẩm kohaku được on koi đưa về từ Dainichi Koi Farm. Đây là em koi kohaku trưởng thành 7 năm tuổi 91 cm, kích thước rất khỏng. Nhìn ở ngoài em ấy như 1 chiếc tàu ngầm lững lững bơi đến đâu thu hút mọi ánh nhìn đến đó.",
+    "price": 400000,
+    "img": "../img/koi3.jpg"
+  }
+]

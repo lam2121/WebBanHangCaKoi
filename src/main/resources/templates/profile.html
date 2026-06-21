@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang Hồ Sơ</title>
+    <link rel="stylesheet" href="/css/profile.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <section>
+      <div th:replace="~{header :: header}"></div>
+      <div class="main" id="home">
+        <div class="main-container">
+          <div class="main-text">
+            <h1>
+              CÁ KOI NHẬT BẢN CHẤT LƯỢNG CAO NHẤT (NISHIKIGOI) <br />
+              ĐƯỢC BÁN TỪ NIIGATA, NHẬT BẢN
+            </h1>
+            <p>
+              Cá Koi Nhật Bản chất lượng cao là biểu tượng của sự may mắn, thịnh
+              vượng và kiên trì trong văn hóa Nhật Bản. Được nuôi dưỡng và chọn
+              lọc kỹ lưỡng qua nhiều thế hệ, cá Koi cao cấp có màu sắc rực rỡ,
+              đa dạng và hoa văn đặc biệt, tạo nên giá trị thẩm mỹ cao. Để đạt
+              được chất lượng cao nhất, cá Koi cần môi trường nước sạch, thức ăn
+              dinh dưỡng và sự chăm sóc tỉ mỉ. Ngoài ra, giống cá cũng đóng vai
+              trò quan trọng trong việc quyết định độ đẹp và độ khỏe mạnh của
+              cá. Những con cá Koi xuất sắc thường có giá trị rất cao, không chỉ
+              về mặt kinh tế mà còn về tinh thần, được xem như biểu tượng của sự
+              trường thọ và hạnh phúc trong văn hóa người nuôi cá trên khắp thế
+              giới.
+            </p>
+          </div>
+          <div class="main-img">
+            <img src="/images/koi.png" alt="" />
+          </div>
+        </div>
+        <div class="social-icons">
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-weibo"></i>
+          <i class="fa-brands fa-tiktok"></i>
+        </div>
+        <div class="button">
+          <a href="/Introduce">Tìm hiểu ngay</a>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </div>
+    </section>
+    <div class="card">
+      <h2>Thông Tin Người Dùng</h2>
+      <div class="info">
+        <p id="userid"><span>ID:</span> <span th:text="${user.id}"></span></p>
+        <p><span>Tên người dùng:</span> <span th:text="${user.username}"></span></p>
+        <p><span>Số điện thoại:</span> <span th:text="${user.phone}"></span></p>
+        <p><span>Email:</span> <span th:text="${user.email}"></span></p>
+      </div>
+    </div>
+    <div class="table-container">
+      <div class="card">
+        <h3>Đơn Hàng Đã Đặt</h3>
+        <div class="order-item1">
+          --API--
+        </div>
+      </div>
+      <div class="card">
+        <h3>Chuyến Đi Đã Đặt</h3>
+        <div class="order-item2">
+          --API--
+        </div>
+      </div>
+    </div>
+  <script src="/js/profile.js"></script>
+  </body>
+  <footer th:replace="~{footer :: footer}"></footer>
+</html>
