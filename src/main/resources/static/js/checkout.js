@@ -128,7 +128,7 @@ document.querySelector('.header_account_icon').addEventListener('click', functio
     dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
 });
 document.getElementById("checkout").addEventListener("click", () => {
-    fetch("/Cart/checkout", {
+    fetch("/checkout", {
         method: "POST"
     })
         .then(response => response.text())
