@@ -127,3 +127,16 @@ document.querySelector('.header_account_icon').addEventListener('click', functio
     // Toggle display of the dropdown menu
     dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
 });
+document.getElementById("checkout").addEventListener("click", () => {
+    fetch("/Cart/checkout", {
+        method: "POST"
+    })
+        .then(response => response.text())
+        .then(url => {
+            window.location.href = url;
+        })
+        .catch(error => {
+            console.error(error);
+            alert("Không thể tạo thanh toán");
+        });
+});

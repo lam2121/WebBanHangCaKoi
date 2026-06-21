@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import uth.edu.vn.du_an_java_nhom10.Model.CartItem;
 import uth.edu.vn.du_an_java_nhom10.Model.User;
 import uth.edu.vn.du_an_java_nhom10.Service.CartService;
+import uth.edu.vn.du_an_java_nhom10.Service.PayOSService;
 import uth.edu.vn.du_an_java_nhom10.Service.UserService;
 
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.Optional;
 
 @Controller
 public class CartController {
-
+    private PayOSService payOSService;
     private UserService userService   ;
     @Autowired
     private CartService cartService;
@@ -48,6 +49,16 @@ public class CartController {
         }
 
         return "redirect:/user/login"; // Trường hợp nếu không tìm thấy userId
+    }
+    @PostMapping("/checkout")
+    @ResponseBody
+    public String checkout(HttpSession session) {
+        Long userId = (Long) session.getAttribute("loggedInUserId");
+
+        if (userId == null) {
+            throw new RuntimeException("Please login first");
+        }
+        return payOSService.createPayment(userId);
     }
 
 }
