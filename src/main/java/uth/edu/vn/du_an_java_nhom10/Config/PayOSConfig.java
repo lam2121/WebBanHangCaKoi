@@ -1,5 +1,6 @@
 package uth.edu.vn.du_an_java_nhom10.Config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import vn.payos.PayOS;
@@ -7,12 +8,21 @@ import vn.payos.PayOS;
 @Configuration
 public class PayOSConfig {
 
+    @Value("${payos.client-id}")
+    private String clientId;
+
+    @Value("${payos.api-key}")
+    private String apiKey;
+
+    @Value("${payos.checksum-key}")
+    private String checksumKey;
+
     @Bean
     public PayOS payOS() {
         return new PayOS(
-                System.getenv("PAYOS_CLIENT_ID"),
-                System.getenv("PAYOS_API_KEY"),
-                System.getenv("PAYOS_CHECKSUM_KEY")
+                clientId,
+                apiKey,
+                checksumKey
         );
     }
 }
