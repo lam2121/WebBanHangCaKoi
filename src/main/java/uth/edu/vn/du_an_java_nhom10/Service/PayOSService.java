@@ -2,9 +2,12 @@ package uth.edu.vn.du_an_java_nhom10.Service;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import uth.edu.vn.du_an_java_nhom10.Model.CartItem;
 import vn.payos.PayOS;
 import vn.payos.model.v2.paymentRequests.CreatePaymentLinkRequest;
 import vn.payos.model.v2.paymentRequests.CreatePaymentLinkResponse;
+
+import java.util.List;
 
 @Service
 public class PayOSService {
@@ -22,7 +25,13 @@ public class PayOSService {
 
     public String createPayment(Long userId) {
         try {
-            Long amount = 10000L; // đổi chỗ này thành tổng giỏ hàng sau
+            List<CartItem> cartItems = cartService.getCartItemsByUserId(userId);
+
+            long amount = 0;
+
+            for (CartItem item : cartItems) {
+                amount += item.getPrice() * item.getQuantity();
+            }
 
             CreatePaymentLinkRequest request = CreatePaymentLinkRequest.builder()
                     .orderCode(System.currentTimeMillis())
