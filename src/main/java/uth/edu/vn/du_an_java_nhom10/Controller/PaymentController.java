@@ -42,12 +42,10 @@ public class PaymentController {
     @GetMapping("/payment/success")
     public String paymentSuccess(HttpSession session) {
         Long userId = (Long) session.getAttribute("loggedInUserId");
-
         if (userId != null) {
             cartService.clearCartByUserId(userId);
         }
-
-        return "redirect:/Cart";
+        return "PaymentSuccess";
     }
 
     @GetMapping("/payment/cancel")

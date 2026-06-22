@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="5;url=/Cart">
+    <title>Thanh toán thành công</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            background:#f5f5f5;
+        }
+
+        .success-box{
+            background:white;
+            padding:40px;
+            border-radius:15px;
+            text-align:center;
+            box-shadow:0 0 15px rgba(0,0,0,0.1);
+            width:450px;
+        }
+
+        .icon{
+            font-size:70px;
+            color:green;
+        }
+
+        h2{
+            color:green;
+            margin-top:15px;
+        }
+
+        p{
+            color:#666;
+        }
+
+        .countdown{
+            font-weight:bold;
+            color:#ff6600;
+        }
+    </style>
+</head>
+<body>
+
+<div class="success-box">
+    <div class="icon">✔</div>
+
+    <h2>Thanh toán thành công</h2>
+
+    <p>Cảm ơn bạn đã mua hàng tại Koi Shop.</p>
+
+    <p>
+        Hệ thống sẽ tự động quay về giỏ hàng sau
+        <span class="countdown" id="countdown">5</span>
+        giây...
+    </p>
+</div>
+
+<script>
+    let time = 5;
+
+    setInterval(() => {
+        time--;
+        document.getElementById("countdown").innerText = time;
+
+        if(time <= 0){
+            BookFish();
+            window.location.href = "/Cart";
+        }
+    }, 1000);
+</script>
+<script src="/js/details.js"></script>
+</body>
+</html>
