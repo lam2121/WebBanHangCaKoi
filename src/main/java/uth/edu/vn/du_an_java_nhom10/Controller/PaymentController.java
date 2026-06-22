@@ -47,11 +47,11 @@ public class PaymentController {
             cartService.clearCartByUserId(userId);
         }
 
-        return "checkout";
+        return "redirect:/Cart";
     }
 
     @GetMapping("/payment/cancel")
     public String paymentCancel() {
-        return "checkout";
+        return "redirect:/Cart";
     }
 }
