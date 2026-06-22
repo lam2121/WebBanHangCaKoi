@@ -51,11 +51,7 @@ public class PaymentController {
     }
 
     @GetMapping("/payment/cancel")
-    public String paymentCancel(HttpSession session) {
-        Long userId = (Long) session.getAttribute("loggedInUserId");
-        if(userId!=null){
-            return "checkout";
-        }
+    public String paymentCancel() {
         return "checkout";
     }
 }
