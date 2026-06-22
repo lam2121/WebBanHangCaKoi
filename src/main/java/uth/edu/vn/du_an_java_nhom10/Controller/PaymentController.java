@@ -2,6 +2,7 @@ package uth.edu.vn.du_an_java_nhom10.Controller;
 
 import jakarta.servlet.http.HttpSession;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,8 +11,7 @@ import uth.edu.vn.du_an_java_nhom10.Service.CartService;
 import vn.payos.PayOS;
 import vn.payos.model.v2.paymentRequests.CreatePaymentLinkRequest;
 
-@RestController
-@RequestMapping("/api/payments")
+@Controller
 public class PaymentController {
     private final CartService cartService;
     private final PayOS payOS;
@@ -21,7 +21,7 @@ public class PaymentController {
         this.payOS = payOS;
     }
 
-    @PostMapping("/create")
+    @PostMapping("/api/payments/create")
     public ResponseEntity<?> createPayment() throws Exception {
 
         long orderCode = System.currentTimeMillis() / 1000;
