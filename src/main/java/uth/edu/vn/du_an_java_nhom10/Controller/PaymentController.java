@@ -8,15 +8,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import uth.edu.vn.du_an_java_nhom10.Service.CartService;
+import uth.edu.vn.du_an_java_nhom10.Service.OrderFishService;
 import vn.payos.PayOS;
 import vn.payos.model.v2.paymentRequests.CreatePaymentLinkRequest;
 
 @Controller
 public class PaymentController {
+    private final OrderFishService orderFishService;
     private final CartService cartService;
     private final PayOS payOS;
 
-    public PaymentController(CartService cartService, PayOS payOS) {
+    public PaymentController(OrderFishService orderFishService,CartService cartService, PayOS payOS) {
+        this.orderFishService = orderFishService;
         this.cartService = cartService;
         this.payOS = payOS;
     }
@@ -43,6 +46,7 @@ public class PaymentController {
     public String paymentSuccess(HttpSession session) {
         Long userId = (Long) session.getAttribute("loggedInUserId");
         if (userId != null) {
+            orderFishService.createOrderFishFromCart(userId);
             cartService.clearCartByUserId(userId);
         }
         return "PaymentSuccess";

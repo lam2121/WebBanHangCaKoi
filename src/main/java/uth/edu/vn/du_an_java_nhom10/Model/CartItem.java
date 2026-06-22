@@ -13,6 +13,7 @@ public class CartItem {
     // Mới thêm
     private String productName; // Lưu tên sản phẩm
     private String productImageUrl; // Lưu URL hình ảnh sản phẩm
+    private String productOrigin;
 
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
@@ -83,4 +84,7 @@ public class CartItem {
         this.product = product;
     }
 
+    public String getProductOrigin() {
+        return productOrigin;
+    }
 }

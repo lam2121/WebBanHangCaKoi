@@ -64,7 +64,7 @@ function BookFish() {
         productName: productName,
         productImageUrl: productImage,
         origin: productOrigin,
-        status: "Dang duyet",
+        status: "Da duyet",
     };
     const userId = document.getElementById("userid").value;
     fetch(`/orderTrip/${userId}`)

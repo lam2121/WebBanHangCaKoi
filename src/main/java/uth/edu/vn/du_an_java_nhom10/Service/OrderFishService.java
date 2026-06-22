@@ -12,6 +12,7 @@ import java.util.Optional;
 @Service
 public class OrderFishService {
 
+    private CartService cartService;
     @Autowired
     private OrderFishRepository orderFishRepository;
     @Autowired
@@ -19,7 +20,11 @@ public class OrderFishService {
     public Optional<OrderFish> getOrderFishById(Long id) {
         return orderFishRepository.findById(id);
     }
-
+    public OrderFishService(CartService cartService,
+                            OrderFishRepository orderFishRepository) {
+        this.cartService = cartService;
+        this.orderFishRepository = orderFishRepository;
+    }
     public boolean deleteOrderFish(Long id) {
         Optional<OrderFish> orderFish = orderFishRepository.findById(id);
         if (orderFish.isPresent()) {
@@ -48,6 +53,23 @@ public class OrderFishService {
         OrderFish orderFish = orderFishRepository.findById(orderFishId).orElseThrow(() -> new RuntimeException("Item not found"));
         orderFish.setStatus(status);
         return orderFishRepository.save(orderFish);
+    }
+    public void createOrderFishFromCart(Long userId) {
+        List<CartItem> cartItems = cartService.getCartItemsByUserId(userId);
+
+        for (CartItem item : cartItems) {
+            OrderFish orderFish = new OrderFish();
+
+            orderFish.setId(item.getProduct().getId());
+            orderFish.setQuantity(item.getQuantity());
+            orderFish.setPrice(item.getPrice());
+            orderFish.setProductName(item.getProductName());
+            orderFish.setProductImageUrl(item.getProductImageUrl());
+            orderFish.setOrigin(item.getProductOrigin());
+            orderFish.setStatus("Da duyet");
+
+            orderFishRepository.save(orderFish);
+        }
     }
 }
 
